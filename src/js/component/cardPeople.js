@@ -23,12 +23,12 @@ export const CardPeople = () => {
     <div className="container-fluid mb-5">
       <div className="row">
         <div className="col-12">
-          <div className="card-slider">
-            <h2 className="mainTitle">Characters</h2>
+          <div className="card-slider inicio">
+            <h2 className="mainTitle">CHARACTERS</h2>
             <div className="card-container people" ref={cardContainerRef}>
               {store.people &&
                 store.people.map((el) => (
-                  <div className="card" key={el.uid}>
+                  <div className="card carta" key={el.uid}>
                     <img
                       src={`https://starwars-visualguide.com/assets/img/characters/${el.uid}.jpg`}
                       className="card-img-top"

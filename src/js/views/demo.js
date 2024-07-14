@@ -10,9 +10,8 @@ export const Demo = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="container">
+		<div className="container vista1">
 			<CardPeople></CardPeople>
-			<br />
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>

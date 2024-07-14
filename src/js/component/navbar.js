@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from 'react'; 
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 
 export const Navbar = () => {
+	
 	return (
 		<nav className="navbar navbar-dark bg-dark fixed-top custom-navbar">
 		<div className="container-fluid">

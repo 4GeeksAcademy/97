@@ -1,13 +1,13 @@
 .menu {
     display: flex;
     justify-content: center;
-    gap: 1.5cm; /* Agrega un espacio de 2cm entre las imágenes */
+    gap: 1.5cm; 
   }
   
   .card-img {
     width: 8cm;
     height: 8cm;
-    margin-top: 5cm; /* Desplaza las imágenes 10cm hacia abajo */
+    margin-top: 4cm; 
   }
   
   .body {
