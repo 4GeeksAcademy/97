@@ -1,0 +1,35 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 1.5cm; /* Agrega un espacio de 2cm entre las imágenes */
+  }
+  
+  .card-img {
+    width: 8cm;
+    height: 8cm;
+    margin-top: 5cm; /* Desplaza las imágenes 10cm hacia abajo */
+  }
+  
+  .body {
+      background-color:  #f1e8d8;
+  }
+  
+  .h-100 {
+    background-color: #f1e8d8;
+  }
+
+  #all-title{
+    color: rgb(158, 16, 16);
+  }
+
+  #charac-title{
+    color: rgb(158, 16, 16);
+  }
+
+  #ve-title{
+    color: rgb(158, 16, 16);
+  }
+
+  #pla-title{
+    color: rgb(158, 16, 16);
+  }
