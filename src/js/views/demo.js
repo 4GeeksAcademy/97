@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { CardPeople } from "../component/cardPeople";
+
 
 import { Context } from "../store/appContext";
 
@@ -11,7 +11,7 @@ export const Demo = () => {
 
 	return (
 		<div className="container vista1">
-			<CardPeople></CardPeople>
+			
 			<Link to="/">
 				<button className="btn btn-primary">Back home</button>
 			</Link>
