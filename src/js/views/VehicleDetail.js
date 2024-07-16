@@ -15,8 +15,6 @@ const initialState = {
 		max_atmosphering_speed: "",
 		cargo_capacity: "",
 		consumables: "",
-		films:"",
-		pilots:"",
 		created: "",
 		edited: "",
 		name: "",
@@ -29,11 +27,12 @@ const initialState = {
 }
 
 
-export const SingleDetail = () => {
+export const VehicleDetail = () => {
     const { store } = useContext(Context);
     const { vehicles } = store;
     const { _id } = useParams();
     const [vehicle, setVehicle] = useState(initialState);
+    const customIndices = [4, 6, 7, 8, 14, 16, 18, 19, 20, 24];
 
     useEffect(() => {
     
@@ -57,13 +56,13 @@ export const SingleDetail = () => {
                     {/* Image section */}
                     <div className="col-md-4 mb-3 text-center">
                         <img
-                        src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`}
+                        src={`https://starwars-visualguide.com/assets/img/vehicles/${customIndices[vehicle.uid]}.jpg`}
                         className="img-fluid rounded vehicle-image"
                         alt="Vehicle"
                         />
                     </div>
 
-                    {/* Character information section */}
+                    {/* Vehicle information section */}
                     <div className="col-md-8 vehicle-info">
                         <div className="card-body">
                         <h3 className="card-title text-center mt-3">{vehicle.properties.name}</h3>
@@ -74,7 +73,7 @@ export const SingleDetail = () => {
                         {/* Character details */}
                         <div className="row">
                             <div className="col-6">
-                            <h4>Properties:</h4>
+                            <h4>Physical Properties:</h4>
                             <ul className="list-group">
                                 <li className="list-group-item">
                                 <span className="fw-bold">Model:</span> {vehicle.properties.model}
@@ -89,18 +88,18 @@ export const SingleDetail = () => {
                                 <span className="fw-bold">Cost:</span> {vehicle.properties.cost_in_credits} credits
                                 </li>
                                 <li className="list-group-item">
-                                <span className="fw-bold">Length:</span> {vehicle.properties.length} kg
+                                <span className="fw-bold">Length:</span> {vehicle.properties.length}
                                 </li>
                                 <li className="list-group-item">
-                                <span className="fw-bold">Crew:</span> {vehicle.properties.crew} kg
+                                <span className="fw-bold">Crew:</span> {vehicle.properties.crew}
                                 </li>
                             </ul>
                             </div>
                             <div className="col-6">
                             <h4>Identifying Features:</h4>
                             <ul className="list-group">
-                                <li className="list-group-item">
-                                <span className="fw-bold">Passengers:</span> {vehicle.properties.passengers} kg
+                            <li className="list-group-item">
+                                <span className="fw-bold">Passengers:</span> {vehicle.properties.passengers}
                                 </li>
                                 <li className="list-group-item">
                                 <span className="fw-bold">Speed:</span> {vehicle.properties.max_atmosphering_speed}
@@ -125,7 +124,7 @@ export const SingleDetail = () => {
                     </div>
                 </div>
                 <div className="text-center back">
-                    <Link to="/Characters">
+                    <Link to="/Transports">
                         <button className="btn btn-danger">Back</button>
                     </Link>
                 </div>
@@ -136,4 +135,4 @@ export const SingleDetail = () => {
     )
 };
 
-export default SingleDetail;
+export default VehicleDetail;

@@ -29,7 +29,7 @@ export const Home = () => {
         </div>
         
         <div className="card-item">
-        <Link to="/Vehicles">
+        <Link to="/Transports">
           <img
             src="https://i.pinimg.com/564x/f9/58/80/f958803d4eaf4fbde0b1e38119fe36d5.jpg"
             alt="Vehicles"

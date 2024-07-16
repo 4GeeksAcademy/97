@@ -3,9 +3,10 @@ import { Link, NavLink } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
-export const Vehicles = () => {
+export const Transports = () => {
 	const { store, actions } = useContext(Context);
 	const { vehicles } = store;
+	const customIndices = [4, 6, 7, 8, 14, 16, 18, 19, 20, 24];
 
 	return (
 		<div className="container-fluid mb-5">
@@ -17,15 +18,16 @@ export const Vehicles = () => {
 							{vehicles.map((vehicle, index) => (
 								<div className="card carta" key={index}>
 										<img
-											src={`https://starwars-visualguide.com/assets/img/vehicles/${index + 1}.jpg`} /* Dynamic image source */
-											className="card-img-top"
-											alt="Vehicles"
-										/>
+                                            src={`https://starwars-visualguide.com/assets/img/vehicles/${customIndices[index]}.jpg`}
+                                            className="card-img-top"
+                                            alt="Vehicles"
+                                        />
+
 										<div className="card-body">
 											<h5 className="card-title">Name: {vehicle.result.properties.name}</h5>
 											<p className="card-text">Model: {vehicle.result.properties.model}</p>
-											<p className="card-text">Class: {vehicle.result.properties.vehicle_class}</p>
-											<p className="card-text">Passengers: {vehicle.result.properties.passengers}</p>
+                                            <p className="card-text">Class: {vehicle.result.properties.vehicle_class}</p>
+                                            <p className="card-text">Passengers: {vehicle.result.properties.passengers}</p>
 										</div>
 										<div className="buttons d-flex justify-content-between">
 										<NavLink
@@ -36,7 +38,7 @@ export const Vehicles = () => {
 										</NavLink>
 											<button
 												onClick={() => actions.modFavorites(vehicle)}
-												className={`btn btn-warning ${store.favorites.includes(person) ? 'active' : ''}`}
+												className={`btn btn-warning ${store.favorites.includes(vehicle) ? 'active' : ''}`}
 											>
 												<i className="fas fa-heart"></i>
 											</button>
@@ -56,4 +58,4 @@ export const Vehicles = () => {
 	);
 };
 
-export default Vehicles;
+export default Transports;
