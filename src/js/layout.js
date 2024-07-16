@@ -2,7 +2,9 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./views/home";
 import { Characters } from "./views/Characters";
+import { Vehicles } from "./views/Vehicles";
 import { SingleDetail } from "./views/SingleDetail";
+import { VehicleDetail } from "./views/VehicleDetail";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single"; 
 
@@ -25,7 +27,9 @@ const Layout = () => {
             <Route path="/" element={<Home />} />
             <Route path="/demo" element={<Demo />} />
             <Route path="/Characters" element={<Characters />} />
+            <Route path="/Vehicles" element={<Vehicles />} />
             <Route path="/SingleDetail/:_id" element={<SingleDetail />} />
+            <Route path="/VehicleDetail/:_id" element={<VehicleDetail />} />
             <Route path="/single/:theid" element={<Single />} />
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>
