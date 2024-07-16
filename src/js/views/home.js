@@ -29,12 +29,14 @@ export const Home = () => {
         </div>
         
         <div className="card-item">
+        <Link to="/Vehicles">
           <img
             src="https://i.pinimg.com/564x/f9/58/80/f958803d4eaf4fbde0b1e38119fe36d5.jpg"
             alt="Vehicles"
             className="card-img"
           />
           <h3 className="card-title" id="ve-title">Vehicles</h3>
+          </Link>
         </div>
         <div className="card-item">
           <img

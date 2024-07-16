@@ -3,40 +3,39 @@ import { Link, NavLink } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
-export const Characters = () => {
+export const Vehicles = () => {
 	const { store, actions } = useContext(Context);
-	const { people } = store;
+	const { vehicles } = store;
 
 	return (
 		<div className="container-fluid mb-5">
 			<div className="row">
 				<div className="card-slider inicio">
-					<h2 className="mainTitle">CHARACTERS</h2>
+					<h2 className="mainTitle">VEHICLES</h2>
 					<div className="overflow-auto">
 						<div className="card-container people">
-							{people.map((person, index) => (
+							{vehicles.map((vehicle, index) => (
 								<div className="card carta" key={index}>
 										<img
-											src={`https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`} /* Dynamic image source */
+											src={`https://starwars-visualguide.com/assets/img/vehicles/${index + 1}.jpg`} /* Dynamic image source */
 											className="card-img-top"
-											alt="Character"
+											alt="Vehicles"
 										/>
 										<div className="card-body">
-											<h5 className="card-title">Name: {person.result.properties.name}</h5>
-											<p className="card-text">Gender: {person.result.properties.gender}</p>
-											<p className="card-text">Birth_year: {person.result.properties.birth_year}</p>
-											<p className="card-text">Mass: {person.result.properties.mass}</p>
+											<h5 className="card-title">Name: {vehicle.result.properties.name}</h5>
+											<p className="card-text">Model: {vehicle.result.properties.model}</p>
+											<p className="card-text">Class: {vehicle.result.properties.vehicle_class}</p>
+											<p className="card-text">Passengers: {vehicle.result.properties.passengers}</p>
 										</div>
 										<div className="buttons d-flex justify-content-between">
 										<NavLink
-											key={person.result._id}
-											to={`/singleDetail/${person.result._id}`}
+											to={`/vehicleDetail/${vehicle.result._id}`}
 											className="btn btn-primary"
 										>
 											Learn More!
 										</NavLink>
 											<button
-												onClick={() => actions.modFavorites(person)}
+												onClick={() => actions.modFavorites(vehicle)}
 												className={`btn btn-warning ${store.favorites.includes(person) ? 'active' : ''}`}
 											>
 												<i className="fas fa-heart"></i>
@@ -57,4 +56,4 @@ export const Characters = () => {
 	);
 };
 
-export default Characters;
+export default Vehicles;
