@@ -2,62 +2,57 @@
     margin-top: 2cm;
   }
     
-  .mainTitle {
+.mainTitle {
     color: rgb(2, 2, 2);
     text-align: left;
     margin-top: 2rem;
-  }
+}
     
-  .people {
+.people {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     text-align: left;
     margin-top: 1rem;
-  }
-
-  .cars {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    text-align: left;
-    margin-top: 1rem;
-  }
+}
     
-  .card-container > div {
+.card-container > div {
     flex: 0 0 260px;
     height: 440px;
     margin-right: 15px;
     scroll-snap-align: start;
-  }
+}
     
-  .card {
+.card {
     width: 100%;
     height: 100%;
     position: relative;
     margin-bottom: 10px;
     background-color: rgb(46, 46, 49);
-  }
+}
     
-  .card-text {
+.card-text {
     color: rgb(245, 244, 244);
-  }
+}
     
-  .card-title {
+.card-title {
     color: rgb(255, 193, 7);
-  }
+}
     
-  .card-img-top {
+.card-img-top {
     object-fit: scale-down;
     width: 100%;
     height: 50%;
     padding-top: 10px;
-  }
+}
    
-  .buttons .btn {
+.buttons .btn {
     margin: 0 10px; /* Ajusta el valor de 10px según tus necesidades */
-  }
+}
    
-  .text-center {
+.text-center {
   margin-top: 1cm; /* Add 2cm margin to the bottom */
-  } 
+} 
+   
+    
+   

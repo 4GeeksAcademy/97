@@ -1,0 +1,9 @@
+.single{
+    margin-top: 2cm;
+}
+
+.back {
+    position: absolute;
+    bottom: 115px; /* Ajusta el valor según sea necesario */
+    right: 10px; /* Ajusta el valor según sea necesario */
+  }

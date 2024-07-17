@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/ejemplo.css";
+import "../../styles/home.css";
 
 
 
@@ -10,12 +10,14 @@ export const Home = () => {
     <div className="container-fluid d-flex justify-content-center align-items-center body">
       <div className="card-container d-flex justify-content-center menu">
       <div className="card-item">
+      <Link to="/Demo">
           <img
             src="https://i.pinimg.com/564x/52/43/80/524380e43c7bfef51d8c58183ceb8657.jpg"
-            alt="Planets"
+            alt="AllStarWars"
             className="card-img"
           />
-          <h3 className="card-title" id="all-title">ALL STAR WARS</h3>
+          <h3 className="card-title" id="all-title">ALL STAR WARS</h3> 
+      </Link>
         </div>
         <div className="card-item">
         <Link to="/Characters">
@@ -39,12 +41,14 @@ export const Home = () => {
           </Link>
         </div>
         <div className="card-item">
+        <Link to="/Worlds">
           <img
             src="https://i.pinimg.com/564x/38/d7/52/38d75212aa2bb7fe31fbe8c6ee748efa.jpg"
             alt="Planets"
             className="card-img"
           />
           <h3 className="card-title" id="pla-title">Planets</h3>
+          </Link>
         </div>
       </div>
     </div>

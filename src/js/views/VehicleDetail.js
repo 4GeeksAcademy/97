@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/demo.css";
+import "../../styles/vehicleD.css";
 
 const initialState = {
     properties: {
@@ -22,7 +22,8 @@ const initialState = {
     
     },
     _id: "",
-    uid:""
+    uid:"",
+    index: 0,
     
 }
 
@@ -39,6 +40,7 @@ export const VehicleDetail = () => {
         const fetchVehicle = async () => {
             const foundVehicle = vehicles.find(newVehicle => newVehicle.result._id === _id);
             if (foundVehicle) {
+                foundVehicle.result.index = vehicles.indexOf(foundVehicle);
                 setVehicle(foundVehicle.result);
             }
         }
@@ -54,9 +56,9 @@ export const VehicleDetail = () => {
                 <div className="col-md-8 shadow p-3 mb-5 bg-dark text-white rounded card-style single">
                     <div className="row">
                     {/* Image section */}
-                    <div className="col-md-4 mb-3 text-center">
+                    <div className="col-md-4 mb-3 text-center imagen">
                         <img
-                        src={`https://starwars-visualguide.com/assets/img/vehicles/${customIndices[vehicle.uid]}.jpg`}
+                        src={`https://starwars-visualguide.com/assets/img/vehicles/${customIndices[vehicle.index]}.jpg`}
                         className="img-fluid rounded vehicle-image"
                         alt="Vehicle"
                         />

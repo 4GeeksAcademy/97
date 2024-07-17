@@ -1,0 +1,9 @@
+.vehicle-image {
+    width: 300px;
+    margin-bottom: 20px; 
+}
+
+.back button.btn {
+    position: absolute;
+    top: 1px;
+  }

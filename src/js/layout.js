@@ -3,8 +3,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./views/home";
 import { Characters } from "./views/Characters";
 import { Transports } from "./views/Transports";
+import { Worlds } from "./views/Worlds";
 import { SingleDetail } from "./views/SingleDetail";
 import { VehicleDetail } from "./views/VehicleDetail";
+import { WorldsDetail } from "./views/WorldsDetail";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single"; 
 
@@ -28,8 +30,10 @@ const Layout = () => {
             <Route path="/demo" element={<Demo />} />
             <Route path="/Characters" element={<Characters />} />
             <Route path="/Transports" element={<Transports />} />
+            <Route path="/Worlds" element={<Worlds />} />
             <Route path="/SingleDetail/:_id" element={<SingleDetail />} />
             <Route path="/VehicleDetail/:_id" element={<VehicleDetail />} />
+            <Route path="/WorldsDetail/:_id" element={<WorldsDetail />} />
             <Route path="/single/:theid" element={<Single />} />
             <Route path="*" element={<h1>Not found!</h1>} />
           </Routes>

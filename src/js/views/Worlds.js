@@ -1,44 +1,44 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/transport.css";
+import "../../styles/world.css";
 
-export const Transports = () => {
+export const Worlds = () => {
 	const { store, actions } = useContext(Context);
-	const { vehicles } = store;
-	const customIndices = [4, 6, 7, 8, 14, 16, 18, 19, 20, 24];
+	const { planets } = store;
+	const customIndices = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 	return (
 		<div className="container-fluid mb-5">
 			<div className="row">
 				<div className="card-slider inicio">
-					<h2 className="mainTitle">VEHICLES</h2>
+					<h2 className="mainTitle">Planets</h2>
 					<div className="overflow-auto">
 						<div className="card-container people">
-							{vehicles.map((vehicle, index) => (
+							{planets.map((planet, index) => (
 								<div className="card carta" key={index}>
 										<img
-                                            src={`https://starwars-visualguide.com/assets/img/vehicles/${customIndices[index]}.jpg`}
+                                            src={`https://starwars-visualguide.com/assets/img/planets/${customIndices[index]}.jpg`}
                                             className="card-img-top"
-                                            alt="Vehicles"
+                                            alt="Planets"
                                         />
 
 										<div className="card-body">
-											<h5 className="card-title">Name: {vehicle.result.properties.name}</h5>
-											<p className="card-text">Model: {vehicle.result.properties.model}</p>
-                                            <p className="card-text">Class: {vehicle.result.properties.vehicle_class}</p>
-                                            <p className="card-text">Passengers: {vehicle.result.properties.passengers}</p>
+											<h5 className="card-title">Name: {planet.result.properties.name}</h5>
+											<p className="card-text">Diameter: {planet.result.properties.diameter}</p>
+                                            <p className="card-text">Gravity: {planet.result.properties.gravity}</p>
+                                            <p className="card-text">Climate: {planet.result.properties.climate}</p>
 										</div>
 										<div className="buttons d-flex justify-content-between">
 										<NavLink
-											to={`/vehicleDetail/${vehicle.result._id}`}
+											to={`/worldsDetail/${planet.result._id}`}
 											className="btn btn-primary"
 										>
 											Learn More!
 										</NavLink>
 											<button
-												onClick={() => actions.modFavorites(vehicle)}
-												className={`btn btn-warning ${store.favorites.includes(vehicle) ? 'active' : ''}`}
+												onClick={() => actions.modFavorites(planet)}
+												className={`btn btn-warning ${store.favorites.includes(planet) ? 'active' : ''}`}
 											>
 												<i className="fas fa-heart"></i>
 											</button>
@@ -58,4 +58,4 @@ export const Transports = () => {
 	);
 };
 
-export default Transports;
+export default Worlds;

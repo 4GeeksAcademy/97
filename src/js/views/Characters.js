@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Context } from "../store/appContext";
-import "../../styles/home.css";
+import "../../styles/people.css";
 
 export const Characters = () => {
 	const { store, actions } = useContext(Context);
