@@ -7,6 +7,7 @@ export const Demo = () => {
 	const { store, actions } = useContext(Context);
 	const { people, vehicles, planets } = store;
 	const customIndices = [4, 6, 7, 8, 14, 16, 18, 19, 20, 24];
+	const customIndices2 = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
 	return (
 		<div className="container-fluid mb-5">
@@ -56,7 +57,7 @@ export const Demo = () => {
 										<img
 											src={`https://starwars-visualguide.com/assets/img/vehicles/${customIndices[index]}.jpg`} /* Dynamic image source */
 											className="card-img-top"
-											alt="Character"
+											alt="Vehicles"
 										/>
 										<div className="card-body">
 											<h5 className="card-title">Name: {vehicle.result.properties.name}</h5>
@@ -88,31 +89,31 @@ export const Demo = () => {
 						<div className="card-slider">
 							<h2 className="mainTitle">PLANETS</h2>
 						<div className="overflow-auto">
-						<div className="card-container people">
-							{people.map((person, index) => (
+						<div className="card-container planets">
+							{planets.map((planet, index) => (
 								<div className="card carta" key={index}>
 										<img
-											src={`https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`} /* Dynamic image source */
+											src={`https://starwars-visualguide.com/assets/img/planets/${customIndices2[index]}.jpg`} /* Dynamic image source */
 											className="card-img-top"
-											alt="Character"
+											alt="Planets"
 										/>
 										<div className="card-body">
-											<h5 className="card-title">Name: {person.result.properties.name}</h5>
-											<p className="card-text">Gender: {person.result.properties.gender}</p>
-											<p className="card-text">Birth_year: {person.result.properties.birth_year}</p>
-											<p className="card-text">Mass: {person.result.properties.mass}</p>
+											<h5 className="card-title">Name: {planet.result.properties.name}</h5>
+											<p className="card-text">Diameter: {planet.result.properties.diameter}</p>
+                                            <p className="card-text">Gravity: {planet.result.properties.gravity}</p>
+                                            <p className="card-text">Climate: {planet.result.properties.climate}</p>
 										</div>
 										<div className="buttons d-flex justify-content-between">
 										<NavLink
-											key={person.result._id}
-											to={`/singleDetail/${person.result._id}`}
+						
+											to={`/worldsDetail/${planet.result._id}`}
 											className="btn btn-primary"
 										>
 											Learn More!
 										</NavLink>
 											<button
-												onClick={() => actions.modFavorites(person)}
-												className={`btn btn-warning ${store.favorites.includes(person) ? 'active' : ''}`}
+												onClick={() => actions.modFavorites(planet)}
+												className={`btn btn-warning ${store.favorites.includes(planet) ? 'active' : ''}`}
 											>
 												<i className="fas fa-heart"></i>
 											</button>

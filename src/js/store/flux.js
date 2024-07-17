@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					if (response.ok) {
 						return data;
 					} else {
-						console.log(`Something bad happened at loolapalloza and ${data}`)
+						console.log(`error ${data}`)
 					}
 				} catch (error) {
 					console.log(error);
@@ -37,7 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						);
 						setStore({ people: peopleInPage });
 					} else {
-						console.log(`Respuesta de la funcion getAllPeople: ${data}, ${response}`)
+						console.log(`Respuesta: ${data}, ${response}`)
 					}
 
 				} catch (error) {
@@ -59,7 +59,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						);
 						setStore({ vehicles: vehicleInPage });
 					} else {
-						console.log(`Respuesta de la funcion getAllVehicles: ${data}, ${response}`)
+						console.log(`Respuesta: ${data}, ${response}`)
 					}
 
 				} catch (error) {
@@ -81,11 +81,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 						);
 						setStore({ planets: planetInPage });
 					} else {
-						console.log(`Respuesta de la funcion getAllPlanets: ${data}, ${response}`)
+						console.log(`Respuesta: ${data}, ${response}`)
 					}
 
 				} catch (error) {
-					console.log("Error trying to bring back the info: ", error)
+					console.log("Error: ", error)
 				}
 			},
 			modFavorites: (fav) => {

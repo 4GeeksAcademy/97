@@ -1,9 +1,5 @@
-.vehicle-image {
-    width: 300px;
-    margin-bottom: 20px; 
-}
-
-.back button.btn {
+.back {
     position: absolute;
-    top: 1px;
+    bottom: 1px; /* Ajusta el valor según sea necesario */
+    right: 10px; /* Ajusta el valor según sea necesario */
   }
