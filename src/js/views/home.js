@@ -1,14 +1,27 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../styles/home.css";
+import "../../styles/fondo.css";
 
 
 
 
 export const Home = () => {
   return (
+    <div className="container">
+    <div class="death-star">
+      <div class="wrapper">
+        <div class="lng"></div>
+        <div class="lng"></div>
+        <div class="lng"></div>
+        <div class="lng"></div>
+        <div class="trench"></div>
+        <div class="weapon"></div>
+      </div>
+    </div>
     <div className="container-fluid d-flex justify-content-center align-items-center body">
       <div className="card-container d-flex justify-content-center menu">
+      <div className="card-container cont1">
       <div className="card-item">
       <Link to="/Demo">
           <img
@@ -29,7 +42,8 @@ export const Home = () => {
           <h3 className="card-title" id="charac-title">Characters</h3>
           </Link>
         </div>
-        
+        </div>
+        <div className="card-container cont2">
         <div className="card-item">
         <Link to="/Transports">
           <img
@@ -50,7 +64,9 @@ export const Home = () => {
           <h3 className="card-title" id="pla-title">Planets</h3>
           </Link>
         </div>
+        </div>
       </div>
+    </div>
     </div>
   );
 };

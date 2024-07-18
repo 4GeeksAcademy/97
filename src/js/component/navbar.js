@@ -23,7 +23,7 @@ export const Navbar = () => {
 	}
 
 	return (
-		<nav className="navbar navbar-dark bg-dark fixed-top custom-navbar">
+		<nav className="navbar navbar-light bg-warning fixed-top custom-navbar">
 			<div className="container-fluid">
 				<Link to="/" className="navbar-brand">
 				<img
@@ -33,7 +33,7 @@ export const Navbar = () => {
 					className="d-inline-block align-top logo me-3"
 					alt="Home Page"
 				/>
-				<span className="navbar-text text-white mx-auto">STAR WARS BLOG</span>
+				<span className="navbar-text text-dark mx-auto">STAR WARS BLOG</span>
 				</Link>
 
 				<div className="d-flex">

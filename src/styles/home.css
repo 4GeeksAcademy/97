@@ -1,22 +1,51 @@
+.container{
+  padding-top: 2cm;
+}
+
 .menu {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 1.5cm; 
   }
   
   .card-img {
-    width: 8cm;
-    height: 8cm;
-    margin-top: 4cm; 
+    width: 5cm;
+    height: 5cm; 
   }
   
+  .cont1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    bottom: 130px; 
+    right: 120px; 
+
+  }
+
+  .cont2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    top: 450px; 
+    right: 120px; 
+  }
 
   .body {
-      background-color:  #f1e8d8;
+      background-color: transparent;
   }
   
   .h-100 {
-    background-color: #f1e8d8;
+    background-color:#000;
+    background-image:
+    radial-gradient(#fff, #fff 1px, transparent 1px),
+    radial-gradient(#fff, #fff 1px, transparent 1px),
+    radial-gradient(#fff, #fff 1px, transparent 1px),
+    radial-gradient(#fff, #fff 1px, transparent 1px);
+    background-size: 500px 500px, 350px 350px, 250px 250px, 150px 150px; 
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+    height:50%;
   }
 
   #all-title{
