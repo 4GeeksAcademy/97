@@ -24,70 +24,95 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getAllPeople: async () => {
-				try {
-					let response = await fetch(`${getStore().urlBase}/people`)
-					let data = await response.json()
-
+				const storedPeople = localStorage.getItem('people');
+			  
+				if (storedPeople) {
+				  // Si hay datos en localStorage, los usamos directamente
+				  setStore({ people: JSON.parse(storedPeople) });
+				} else {
+				  // Si no hay datos en localStorage, hacemos la petición a la API
+				  try {
+					const response = await fetch(`${getStore().urlBase}/people`);
+					const data = await response.json();
+			  
 					if (response.ok) {
-						let peopleInPage = await Promise.all(
-							data.results.map(async (item) => {
-								let dataUrl = item.url;
-								return await getActions().getObjectbyID(dataUrl);
-							})
-						);
-						setStore({ people: peopleInPage });
+					  const peopleInPage = await Promise.all(
+						data.results.map(async (item) => {
+						  const dataUrl = item.url;
+						  return await getActions().getObjectbyID(dataUrl);
+						})
+					  );
+					  setStore({ people: peopleInPage });
+					  localStorage.setItem('people', JSON.stringify(peopleInPage)); // Almacenamos los datos en localStorage
 					} else {
-						console.log(`Respuesta: ${data}, ${response}`)
+					  console.log(`Respuesta: ${data}, ${response}`);
 					}
-
-				} catch (error) {
-					console.log("Error trying to bring back the info: ", error)
+				  } catch (error) {
+					console.log("Error trying to bring back the info: ", error);
+				  }
 				}
-			},
+			  },
 
-			getAllVehicles: async () => {
-				try {
-					let response = await fetch(`${getStore().urlBase}/vehicles`)
-					let data = await response.json()
-
+			  getAllVehicles: async () => {
+				const storedVehicles = localStorage.getItem('vehicles');
+			  
+				if (storedVehicles) {
+				  // Si hay datos en localStorage, los usamos directamente
+				  setStore({ vehicles: JSON.parse(storedVehicles) });
+				} else {
+				  // Si no hay datos en localStorage, hacemos la petición a la API
+				  try {
+					const response = await fetch(`${getStore().urlBase}/vehicles`);
+					const data = await response.json();
+			  
 					if (response.ok) {
-						let vehicleInPage = await Promise.all(
-							data.results.map(async (item) => {
-								let dataUrl = item.url;
-								return await getActions().getObjectbyID(dataUrl);
-							})
-						);
-						setStore({ vehicles: vehicleInPage });
+					  const vehiclesInPage = await Promise.all(
+						data.results.map(async (item) => {
+						  const dataUrl = item.url;
+						  return await getActions().getObjectbyID(dataUrl);
+						})
+					  );
+					  setStore({ vehicles: vehiclesInPage });
+					  localStorage.setItem('vehicles', JSON.stringify(vehiclesInPage)); // Almacenamos los datos en localStorage
 					} else {
-						console.log(`Respuesta: ${data}, ${response}`)
+					  console.log(`Respuesta: ${data}, ${response}`);
 					}
-
-				} catch (error) {
-					console.log("Error trying to bring back the info: ", error)
+				  } catch (error) {
+					console.log("Error trying to bring back the info: ", error);
+				  }
 				}
-			},
+			  },
 
-			getAllPlanets: async () => {
-				try {
-					let response = await fetch(`${getStore().urlBase}/planets`)
-					let data = await response.json()
-
+			  getAllPlanets: async () => {
+				const storedPlanets = localStorage.getItem('planets');
+			  
+				if (storedPlanets) {
+				  // Si hay datos en localStorage, los usamos directamente
+				  setStore({ planets: JSON.parse(storedPlanets) });
+				} else {
+				  // Si no hay datos en localStorage, hacemos la petición a la API
+				  try {
+					const response = await fetch(`${getStore().urlBase}/planets`);
+					const data = await response.json();
+			  
 					if (response.ok) {
-						let planetInPage = await Promise.all(
-							data.results.map(async (item) => {
-								let dataUrl = item.url;
-								return await getActions().getObjectbyID(dataUrl);
-							})
-						);
-						setStore({ planets: planetInPage });
+					  const planetsInPage = await Promise.all(
+						data.results.map(async (item) => {
+						  const dataUrl = item.url;
+						  return await getActions().getObjectbyID(dataUrl);
+						})
+					  );
+					  setStore({ planets: planetsInPage });
+					  localStorage.setItem('planets', JSON.stringify(planetsInPage)); // Almacenamos los datos en localStorage
 					} else {
-						console.log(`Respuesta: ${data}, ${response}`)
+					  console.log(`Respuesta: ${data}, ${response}`);
 					}
-
-				} catch (error) {
-					console.log("Error: ", error)
+				  } catch (error) {
+					console.log("Error trying to bring back the info: ", error);
+				  }
 				}
-			},
+			  },
+			  
 			modFavorites: (fav) => {
 
 				let store = getStore();

@@ -35,7 +35,7 @@ export const Home = () => {
         <div className="card-item">
         <Link to="/Characters">
           <img
-            src="https://i.pinimg.com/564x/ef/e2/ca/efe2ca8f3a1a068406602fb224aff309.jpg"
+            src="https://i.pinimg.com/236x/34/23/67/342367a7b8d597f80f3a8135f50c7941.jpg"
             alt="Characters"
             className="card-img"
           />
@@ -47,7 +47,7 @@ export const Home = () => {
         <div className="card-item">
         <Link to="/Transports">
           <img
-            src="https://i.pinimg.com/564x/f9/58/80/f958803d4eaf4fbde0b1e38119fe36d5.jpg"
+            src="https://i.pinimg.com/236x/36/ca/03/36ca039c817707060177a4584ea20dc0.jpg"
             alt="Vehicles"
             className="card-img"
           />
